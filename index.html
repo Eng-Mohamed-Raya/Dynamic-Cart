@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title -->
+    <title>Dynamic Cart</title>
+
+    <!-- styles -->
+        <!-- font awesome -->
+            <link rel="stylesheet" href="./fonts/all.min.css">
+            <!-- css style -->
+        <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="cart-content">
+            <div class="cards">
+                <!-- cart -->
+            </div>
+            <!-- order summary -->
+            <div class="order-summary">
+                <div class="title">
+                    order summary
+                </div>
+                <img src="./images/image-summary-order.svg" alt="order-summary-image" class="order-summary-image">
+                <div class="subtotal">
+                    <p>subtotal :</p>
+                    <p>$<span class="subTotal-num"></span></p>
+                </div>
+                <div class="shipping">
+                    <p>shipping :</p>
+                    <p>$<span class="shipping-num"></span></p>
+                </div>
+                <div class="total-price">
+                    <div class="total-content">
+                        <p>total :</p>
+                        <div class="taxes">
+                            including $<span class="taxes-num">2.24</span> in taxes
+                        </div>
+                    </div>
+                    <div class="total-num">$<span class="total-num"></span></div>
+                </div>
+                <div class="btn-check-out">
+                    <button class="btn">check out</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- js files -->
+     <!-- font awesome -->
+    <script src="./fonts/all.min.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+</html>

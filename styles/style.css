@@ -1,0 +1,265 @@
+/* -------------------- reset--------------------  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: Poppins;
+}
+/* -------------------- main styles --------------------  */
+:root{
+    --primary-color: #0F4D68;
+    --secondry-color:#00000099;
+    --hover-color:#0f4d68f1;
+    --main-letter-color:black;
+}
+
+.btn{
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: all 0.1s ease-in-out;
+}
+
+
+.container{
+    max-width: 90%;
+    min-height: 100vh;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.cart-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.cards
+,.order-summary{
+    width: 50%;
+    height: 100vh;
+}
+
+
+/*-------------------- start cards --------------------  */
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 1rem;
+    margin-right: 10px;
+}
+.card{
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    border-radius: 10px;
+}
+.card .card-image
+,.card .product-name
+,.card .price-stars
+,.card .measureType
+,.card .numbers-of-Product{
+    width: 100%;
+    text-transform: capitalize;
+}
+.card .card-image{
+    position: relative;
+
+}
+.card-image img{
+    width: 100%;
+    height: 230px;
+}
+.card-image .delete-icon{
+position: absolute;
+width: 50px;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 12px;
+background-color: red;
+color: rgb(219, 215, 215);
+top: 10px;
+right:10px;
+font-size: 25px;
+cursor: pointer;
+transition: all .1s ease-in-out;
+}
+.fa-trash{
+    width: 100%;
+}
+.card-image .delete-icon:hover{
+    background-color:rgba(255, 0, 0, 0.87);
+    color: white;
+}
+
+.card .product-name{
+    font-size: 20px;
+}
+.card .price-stars .old-price{
+    text-decoration: line-through;
+    color: var(--secondry-color);
+}
+.card .price-stars .new-price{
+    color: red;
+}
+.fa-star{
+    color: gold;
+}
+.no-gold{
+    color:var(--secondry-color)
+}
+.card .measureType{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: var(--secondry-color);
+     margin: 5px 0;
+}
+.card .measureType select{
+    /* width: 100px; */
+    border: 1px solid var(--secondry-color);
+    text-transform: capitalize;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20.2px;
+    color: var(--secondry-color);
+}
+.card .measureType select >option{
+    cursor: pointer;
+}
+.card .numbers-of-Product{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    height: 40px;
+   
+}
+.numbers-of-Product div .fa-minus, 
+.numbers-of-Product div .fa-plus{
+    cursor: pointer;
+    width: 100%; 
+}
+/*-------------------- end cards -------------------- */
+
+/* -------------------- start summary -------------------- */
+.order-summary{
+    width: 600px;
+    padding: 48px;
+    height:fit-content ;
+    border: 1px solid var(--primary-color);
+}
+.order-summary .title{
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 28px;
+    text-transform: capitalize;
+}
+.order-summary .order-summary-image{
+    width: 100%;
+}
+.order-summary .subtotal
+,.order-summary .shipping
+,.order-summary .total-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+}
+.order-summary .total-price{
+    margin-bottom: 25px;
+}
+.order-summary .shipping{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--secondry-color);
+}
+.order-summary .total-price .taxes{
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    color: var(--secondry-color);
+    margin-top: 8px;
+}
+.order-summary .total-price .total-num{
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 18px;
+}
+.btn-check-out .btn{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 26px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.btn-check-out .btn:hover{
+    background-color: var(--hover-color);
+}
+
+/*--------------------  end summary -------------------- */
+
+/* -------------------- Responsive ---------------------- */
+
+/* Tablet (medium screens) */
+@media (max-width: 992px) {
+  .cart-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .cards,
+  .order-summary {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .order-summary {
+    padding: 30px;
+  }
+}
+
+/* Mobile (small screens) */
+@media (max-width: 576px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    height: auto;
+    padding: 15px;
+  }
+
+  .card-image img {
+    height: 180px;
+  }
+
+  .order-summary {
+    padding: 20px;
+  }
+
+  .order-summary .title {
+    font-size: 24px;
+  }
+
+  .btn-check-out .btn {
+    font-size: 20px;
+    height: 45px;
+  }
+}
